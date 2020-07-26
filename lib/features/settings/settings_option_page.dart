@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:expense_tracking/features/settings/settings_option.dart';
 import 'package:expense_tracking/features/settings/text_scale.dart';
-import 'package:expense_tracking/features/settings/theme.dart';
+import 'package:expense_tracking/themes/theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const double _kItemHeight = 48.0;
