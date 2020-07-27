@@ -1,6 +1,8 @@
+import 'package:expense_tracking/services/device_info_service.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  DeviceInfoService.configure();
   runApp(MyApp());
 }
 

@@ -78,4 +78,5 @@ class AppTheme {
       accentTextTheme: _buildTextTheme(base.accentTextTheme),
     );
   }
+
 }
