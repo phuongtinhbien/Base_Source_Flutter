@@ -25,13 +25,20 @@ class Translations {
 
   static Future<Translations> load(Locale locale) async {
     Translations translations = new Translations(locale);
+    String availableCode = getAvailableCode(locale);
     String jsonContent =
-        await rootBundle.loadString("locale/i18n_${locale.languageCode}.json");
+    await rootBundle.loadString("assets/strings/intl_$availableCode.json");
     _localizedValues = json.decode(jsonContent);
     return translations;
   }
 
-
+  static String getAvailableCode(Locale locale) {
+    String availableCode = locale.languageCode;
+    if (locale.countryCode.isNotEmpty) {
+      availableCode = "${locale.languageCode}_${locale.countryCode}";
+    }
+    return availableCode;
+  }
 
   get currentLanguage => locale.languageCode;
 }
@@ -40,7 +47,15 @@ class TranslationsDelegate extends LocalizationsDelegate<Translations> {
   const TranslationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => ['en', 'zh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => [
+    Locale.fromSubtags(
+      languageCode: 'vi',
+      countryCode: 'VN',
+    ),
+    Locale.fromSubtags(
+      languageCode: 'en',
+    ),
+  ].contains(locale);
 
   @override
   Future<Translations> load(Locale locale) => Translations.load(locale);
