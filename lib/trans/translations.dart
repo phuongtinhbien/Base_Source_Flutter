@@ -9,8 +9,12 @@ import 'package:flutter/services.dart' show rootBundle;
 class Translations {
   Translations(Locale locale) {
     this.locale = locale;
-    _localizedValues = null;
+//    _localizedValues = null;
   }
+
+  static Translations translations;
+
+  static TranslationsDelegate delegate =  TranslationsDelegate();
 
   Locale locale;
   static Map<dynamic, dynamic> _localizedValues;
@@ -24,17 +28,18 @@ class Translations {
   }
 
   static Future<Translations> load(Locale locale) async {
-    Translations translations = new Translations(locale);
     String availableCode = getAvailableCode(locale);
+
     String jsonContent =
-    await rootBundle.loadString("assets/strings/intl_$availableCode.json");
+    await rootBundle.loadString("locale/i18n_$availableCode.json");
     _localizedValues = json.decode(jsonContent);
-    return translations;
+    Translations.translations = Translations(locale);
+    return Translations.translations;
   }
 
   static String getAvailableCode(Locale locale) {
     String availableCode = locale.languageCode;
-    if (locale.countryCode.isNotEmpty) {
+    if (locale.countryCode != null && locale.countryCode.isNotEmpty) {
       availableCode = "${locale.languageCode}_${locale.countryCode}";
     }
     return availableCode;
@@ -44,13 +49,12 @@ class Translations {
 }
 
 class TranslationsDelegate extends LocalizationsDelegate<Translations> {
-  const TranslationsDelegate();
+  TranslationsDelegate();
 
   @override
   bool isSupported(Locale locale) => [
     Locale.fromSubtags(
       languageCode: 'vi',
-      countryCode: 'VN',
     ),
     Locale.fromSubtags(
       languageCode: 'en',
@@ -66,7 +70,7 @@ class TranslationsDelegate extends LocalizationsDelegate<Translations> {
 
 class FallbackCupertinoLocalisationsDelegate
     extends LocalizationsDelegate<CupertinoLocalizations> {
-  const FallbackCupertinoLocalisationsDelegate();
+  FallbackCupertinoLocalisationsDelegate();
 
   @override
   bool isSupported(Locale locale) => true;

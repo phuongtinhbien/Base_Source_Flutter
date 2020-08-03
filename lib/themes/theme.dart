@@ -1,4 +1,6 @@
+import 'package:expense_tracking/themes/color_style.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 enum ThemeName { DARK, LIGHT }
 
@@ -42,40 +44,62 @@ class AppTheme {
       primaryColor: primaryColor,
       buttonColor: primaryColor,
       indicatorColor: const Color(0xFF3F3F4C),
-      accentColor: Colors.blueAccent,
+      accentColor: ColorStyle.blue,
       canvasColor: const Color(0xFF2B2B2B),
       scaffoldBackgroundColor: const Color(0xFF2E2E3B),
       backgroundColor: const Color(0xFF2E2E3B),
-      errorColor: const Color(0xFFB00020),
+      errorColor: ColorStyle.red,
       buttonTheme: const ButtonThemeData(
         textTheme: ButtonTextTheme.primary,
       ),
       textTheme: _buildTextTheme(base.textTheme),
       primaryTextTheme: _buildTextTheme(base.primaryTextTheme),
       accentTextTheme: _buildTextTheme(base.accentTextTheme),
+        appBarTheme: AppBarTheme(
+
+            textTheme: TextTheme(
+                title: GoogleFonts.poppins(
+                    color: ColorStyle.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold
+                )
+            )
+        )
     );
   }
 
   ThemeData _buildLightTheme() {
-    const Color primaryColor = Colors.lightBlue;
+    Color primaryColor = ColorStyle.blue;
     final ThemeData base = new ThemeData.light();
     return base.copyWith(
       primaryColor: primaryColor,
       buttonColor: primaryColor,
-      indicatorColor: Colors.white,
+      indicatorColor: ColorStyle.white,
       splashColor: Colors.white24,
       splashFactory: InkRipple.splashFactory,
-      accentColor: Colors.lightBlueAccent,
+      accentColor: ColorStyle.blue,
       canvasColor: Colors.white,
       scaffoldBackgroundColor: Colors.white,
       backgroundColor: Colors.white,
-      errorColor: const Color(0xFFB00020),
+      errorColor: ColorStyle.red,
+
+
       buttonTheme: const ButtonThemeData(
         textTheme: ButtonTextTheme.primary,
       ),
       textTheme: _buildTextTheme(base.textTheme),
       primaryTextTheme: _buildTextTheme(base.primaryTextTheme),
       accentTextTheme: _buildTextTheme(base.accentTextTheme),
+      appBarTheme: AppBarTheme(
+        color: Colors.white,
+        textTheme: TextTheme(
+          title: GoogleFonts.poppins(
+              color: ColorStyle.dark,
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold
+          )
+        )
+      )
     );
   }
 

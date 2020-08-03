@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>38923661451-gpb4o6747ihdm12chnm38vbsu0ofo1nl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.38923661451-gpb4o6747ihdm12chnm38vbsu0ofo1nl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAp2MleL_JKYryZ4wxYWVp4BrsJo5sVZS8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>38923661451</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>vn.phuongvu.expenseTracking</string>
+	<key>PROJECT_ID</key>
+	<string>my-fininace</string>
+	<key>STORAGE_BUCKET</key>
+	<string>my-fininace.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:38923661451:ios:b109121b3f9e198b58648e</string>
+	<key>DATABASE_URL</key>
+	<string>https://my-fininace.firebaseio.com</string>
+</dict>
+</plist>

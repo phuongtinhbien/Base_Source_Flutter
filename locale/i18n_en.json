@@ -4,5 +4,15 @@
   "label_loading":"Loading...",
   "bottom_bar_label_home": "Home",
   "bottom_bar_label_notice": "Message",
-  "bottom_bar_label_mine": "Mine"
+  "bottom_bar_label_mine": "Mine",
+  "welcome_to": "Welcome to Expense",
+  "sign_in_to_continue": "Sign in to continue",
+  "login_with_google": "Login with Google",
+  "login_with_facebook": "Login with Facebook",
+  "activities": "Activities",
+  "spent": "Spent",
+  "earned": "Earned",
+  "expenses": "expenses",
+  "incomes": "incomes",
+  "budget_so_far": "Budget so far"
 }
